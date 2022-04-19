@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/fragmentCadTarefa">
+
+    <fragment
+        android:id="@+id/fragmentPrincipal"
+        android:name=".fragment.FragmentPrincipal"
+        android:label="fragment_principal"
+        tools:layout="@layout/fragment_principal" >
+        <action
+            android:id="@+id/action_fragmentPrincipal_to_fragmentCadTarefa"
+            app:destination="@id/fragmentCadTarefa" />
+        <action
+            android:id="@+id/action_fragmentPrincipal_to_fragmentDetalhe"
+            app:destination="@id/fragmentDetalhe" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCadTarefa"
+        android:name=".fragment.FragmentCadTarefa"
+        android:label="fragment_cad_tarefa"
+        tools:layout="@layout/fragment_cad_tarefa" />
+    <fragment
+        android:id="@+id/fragmentDetalhe"
+        android:name=".fragment.FragmentDetalhe"
+        android:label="fragment_detalhe"
+        tools:layout="@layout/fragment_detalhe" >
+        <action
+            android:id="@+id/action_fragmentDetalhe_to_fragmentCadSub"
+            app:destination="@id/fragmentCadSub" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCadSub"
+        android:name=".fragment.FragmentCadSub"
+        android:label="fragment_cad_sub"
+        tools:layout="@layout/fragment_cad_sub" />
+</navigation>

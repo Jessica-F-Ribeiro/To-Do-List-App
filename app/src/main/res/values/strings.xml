@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">To Do List App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="linear_carTarefa"></string>
+    <string name="tx_titulo"></string>
+    <string name="ed_titulo"></string>
+    <string name="tx_descricao"></string>
+    <string name="data"></string>
+    <string name="botao_data"></string>
+    <string name="salvar"></string>
+</resources>
