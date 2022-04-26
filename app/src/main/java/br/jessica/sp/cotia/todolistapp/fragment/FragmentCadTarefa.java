@@ -1,10 +1,12 @@
 package br.jessica.sp.cotia.todolistapp.fragment;
 
 import android.app.DatePickerDialog;
+import android.os.AsyncTask;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -93,10 +95,52 @@ public class FragmentCadTarefa extends Fragment {
                 Calendar dataAtual = Calendar.getInstance();
                 tarefa.setDataCriacao(dataAtual.getTimeInMillis());
                 // salvar a tarefa no BD
-                database.getTarefaDao().insert(tarefa);
+                new InsertTarefa().execute(tarefa);
             }
         });
         // retorna a view raiz do binding
         return binding.getRoot();
+    }
+    // classe para a task de Inserir tarefa
+    private class InsertTarefa extends AsyncTask<Tarefa, Void, String> {
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+            Log.w("Passou", "no onPreExecute");
+        }
+
+        @Override
+        protected void onProgressUpdate(Void... values) {
+            super.onProgressUpdate(values);
+            Log.w("Passou", "no onProgressUpdate");
+        }
+
+        @Override
+        protected String doInBackground(Tarefa... tarefas) {
+            Log.w("Passou", "no doInBackground");
+            // extrair a tarefa do vetor
+            Tarefa t = tarefas[0];
+            try {
+                // tenta inserir
+                database.getTarefaDao().insert(t);
+                // retorna ok caso tenha passado sem erro
+                return "ok";
+            }catch (Exception e){
+                e.printStackTrace();
+                // retorna a mensagem de erro caso tenha dado erro
+                return e.getMessage();
+            }
+        }
+
+        @Override
+        protected void onPostExecute(String msg) {
+            if (msg.equals("ok")){
+                Log.w("Resultado", "Iupiiiiii");
+            }else{
+                Log.w("Resultado", msg);
+                Toast.makeText(getContext(), "Deu Ruim"+msg, Toast.LENGTH_SHORT).show();
+            }
+        }
     }
 }
