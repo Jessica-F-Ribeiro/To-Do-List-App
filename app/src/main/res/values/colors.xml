@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#d1c4e9</color>
-    <color name="purple_500">#b39ddb</color>
+    <color name="purple_200">#d1c4e9</color> <!-- cor da barra -->
+    <color name="purple_500">#ba68c8</color> <!-- cor de tudo -->
     <color name="purple_700">#9575cd</color>
     <color name="teal_200">#8c9eff</color>
     <color name="teal_700">#FF018786</color>
