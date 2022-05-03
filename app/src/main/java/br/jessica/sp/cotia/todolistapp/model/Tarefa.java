@@ -14,9 +14,7 @@ public class Tarefa {
     private long dataPrevista;
     private long dataFinalizada;
 
-    public Long getIdTarefa() {
-        return idTarefa;
-    }
+    public Long getIdTarefa() { return idTarefa; }
 
     public void setIdTarefa(Long idTarefa) {
         this.idTarefa = idTarefa;
@@ -60,5 +58,10 @@ public class Tarefa {
 
     public void setDataFinalizada(long dataFinalizada) {
         this.dataFinalizada = dataFinalizada;
+    }
+
+    // informa se a tarefa está concluída
+    public boolean isConcluida(){
+        return dataFinalizada != 0;
     }
 }

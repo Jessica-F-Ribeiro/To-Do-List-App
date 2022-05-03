@@ -10,4 +10,6 @@
     <color name="indigo">#5C6BC0</color>
     <color name="claro">#e0e0e0</color>
     <color name="ciano_claro">#b2ebf2</color>
+    <color name="amarelo">#FFFF00</color>
+    <color name="verde">#008000</color>
 </resources>

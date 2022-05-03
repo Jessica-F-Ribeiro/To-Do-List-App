@@ -137,6 +137,8 @@ public class FragmentCadTarefa extends Fragment {
         protected void onPostExecute(String msg) {
             if (msg.equals("ok")){
                 Log.w("Resultado", "Iupiiiiii");
+                // aciona o botao de voltar
+                getActivity().onBackPressed();
             }else{
                 Log.w("Resultado", msg);
                 Toast.makeText(getContext(), "Deu Ruim"+msg, Toast.LENGTH_SHORT).show();

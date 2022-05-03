@@ -7,4 +7,8 @@
     <string name="descricao"></string>
     <string name="botao_data"></string>
     <string name="salvar"></string>
+    <string name="titulo_tv"></string>
+    <string name="data_tv"></string>
+    <string name="status_tv"></string>
+    <string name="check_tv"></string>
 </resources>
